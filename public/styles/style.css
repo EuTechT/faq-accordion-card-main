@@ -1,0 +1,170 @@
+/*
+    Container
+*/
+#container {
+    background: #fff;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+/*
+    Illustration
+*/
+.container__illustration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+.illustration__woman-mobile {
+    position: absolute;
+    top: -110px;
+}
+
+.illustration__woman-desktop, .illustration__bg-desktop {
+    display: none;
+}
+
+/*
+    Container FAQ
+*/
+.container__faq {
+    margin: 22px 0 50px;
+    width: 88%;
+}
+
+.faq__title h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.faq__title {
+    margin-bottom: 22px;
+}
+
+/*
+    Container FAQ - Questions
+*/
+.div-question {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.div-question__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question__title {
+    font-weight: 400;
+}
+
+.question__title--modified {
+    font-weight: 700;
+}
+
+.question__button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    transform: rotate(0deg);
+    transition: transform 0.25s;
+
+    outline: 0;
+}
+
+.question__button--rotate {
+    transform: rotate(-180deg);
+    transition: transform 0.25s;
+}
+
+/*
+    Container FAQ - Answers
+*/
+.div-question__answer {
+    margin-top: 10px;
+    display: none;
+}
+
+.div-question__answer p {
+    font-size: 1.4rem;
+}
+
+.div-question__answer--show {
+    display: block;
+
+    animation-name: showAnswer;
+    animation-duration: 0.25s;
+}
+
+@keyframes showAnswer {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+    } to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+/*
+    MEDIA QUERIE
+*/
+@media all and (min-width: 900px){
+    #container {
+        max-width: 860px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        padding: 40px 0 20px 0;
+    }
+
+    .illustration__woman-mobile, .illustration__bg-mobile {
+        display: none;
+    }
+
+    .illustration__woman-desktop, .illustration__bg-desktop {
+        display: block;
+    }
+
+    .container__illustration {
+        width: 50%;
+    }
+
+    .illustration__woman-desktop {
+        height: 250px;
+
+        position: absolute;
+        top: -152px;
+        left: -45px
+    }
+
+    .illustration__bg-desktop {
+        height: 400px;
+
+        position: absolute;
+        top: -220px;
+        left: -125px;
+    }
+
+    .container__faq {
+        width: 50%;
+        margin-right: 60px;
+    }
+
+    .faq__title h1 {
+        text-align: left;
+    }
+}
