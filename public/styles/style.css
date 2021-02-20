@@ -67,6 +67,7 @@
 
 .question__title {
     font-weight: 400;
+    transition: font-weight 0.3s linear;
 }
 
 .question__title--modified {
@@ -79,43 +80,32 @@
     cursor: pointer;
 
     transform: rotate(0deg);
-    transition: transform 0.25s;
+    transition: transform 0.3s;
 
     outline: 0;
 }
 
 .question__button--rotate {
     transform: rotate(-180deg);
-    transition: transform 0.25s;
+    transition: transform 0.3s;
 }
 
 /*
     Container FAQ - Answers
 */
 .div-question__answer {
-    margin-top: 10px;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s linear;
 }
 
 .div-question__answer p {
+    padding: 10px 0;
     font-size: 1.4rem;
 }
 
 .div-question__answer--show {
-    display: block;
-
-    animation-name: showAnswer;
-    animation-duration: 0.25s;
-}
-
-@keyframes showAnswer {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -10px, 0);
-    } to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+    max-height: 300px;
 }
 
 
